@@ -30,7 +30,7 @@ class Berita extends CI_Controller {
 	public function simpan()
 	{
 		$config['upload_path'] = './assets/uploads/';
-		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+		$config['allowed_types'] = 'gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG';
 		$config['max_size'] = 2048;
 		$this->load->library('upload', $config);
 		if ($this->upload->do_upload('gambar')) {
@@ -90,7 +90,7 @@ class Berita extends CI_Controller {
 	{
 		$proses = $this->berita_model->hapus($id);
 		if ($proses) {
-			redirect('berita/list');
+			redirect('berita');
 		}else{
 			echo "gagal hapus";
 		}

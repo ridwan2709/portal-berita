@@ -10,7 +10,7 @@
             <select name="id_kategori" class="form-control" required>
                 <option value="">Pilih Kategori</option>
                 <?php foreach($kategori as $row): ?>
-                <option value="<?= $row->id ?>"><?= $row->nama ?></option>
+                <option value="<?= $row->id ?>"><?= $row->name ?></option>
                 <?php endforeach; ?>
             </select>
         </div>

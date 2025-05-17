@@ -14,6 +14,7 @@ class Category extends CI_Controller {
         $data['title'] = 'Daftar Kategori';
         
         $this->load->view('admin/template/header', $data);
+        $this->load->view('admin/template/sidebar', $data);
         $this->load->view('category/index', $data);
         $this->load->view('admin/template/footer');
     }
@@ -25,6 +26,7 @@ class Category extends CI_Controller {
             $data['title'] = 'Tambah Kategori';
             
             $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/sidebar', $data);
             $this->load->view('category/create');
             $this->load->view('admin/template/footer');
         } else {
@@ -46,6 +48,7 @@ class Category extends CI_Controller {
             $data['title'] = 'Edit Kategori';
             
             $this->load->view('admin/template/header', $data);
+            $this->load->view('admin/template/sidebar', $data);
             $this->load->view('category/edit', $data);
             $this->load->view('admin/template/footer');
         } else {

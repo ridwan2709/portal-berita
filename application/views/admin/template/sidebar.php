@@ -28,6 +28,11 @@
                     <i class="fas fa-fw fa-book"></i>
                     <span>Berita</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('category') ?>">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>Kategori</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
