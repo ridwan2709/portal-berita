@@ -15,14 +15,21 @@
                                 <div class="p-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                        <?php
-                                            if (!$this->session->flashdata()) {
-                                                echo $this->session->flashdata('error');
-                                            }
-                                            
-                                        ?>
+                                        <?php 
+				if($this->session->flashdata('error') !='')
+				{
+					echo '<div class="alert alert-danger" role="alert">';
+					echo $this->session->flashdata('error');
+					echo '</div>';
+				}
+				?>
                                     </div>
-                                    <form class="user" method="post" action="<?= base_url('auth/proses') ?>">
+                                    <form class="user" method="POST" action="<?= base_url('register/proses') ?>">
+                                        <div class="form-group">
+                                            <input type="text" name="nama" class="form-control form-control-user"
+                                                id="nama" aria-describedby="nama"
+                                                placeholder="Masukan nama...">
+                                        </div>
                                         <div class="form-group">
                                             <input type="text" name="username" class="form-control form-control-user"
                                                 id="username" aria-describedby="username"
@@ -37,7 +44,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="<?= base_url('register')?>">Create an Account!</a>
+                                        <a class="small" href="register.php">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
