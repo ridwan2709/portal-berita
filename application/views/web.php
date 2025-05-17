@@ -100,23 +100,23 @@
                         </div>
                     </div>
                     <!-- Popular News End -->
-
-                    <!-- Tags Start -->
+                    <!-- Categories Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">Kategori</h4>
                         </div>
-                        <div class="bg-white border border-top-0 p-3">
-                            <div class="d-flex flex-wrap m-n1">
-                                <a href="<?= base_url('web/kategori/teknologi') ?>" class="btn btn-sm btn-outline-secondary m-1">Teknologi</a>
-                                <a href="<?= base_url('web/kategori/olahraga') ?>" class="btn btn-sm btn-outline-secondary m-1">Olahraga</a>
-                                <a href="<?= base_url('web/kategori/politik') ?>" class="btn btn-sm btn-outline-secondary m-1">Politik</a>
-                                <a href="<?= base_url('web/kategori/kesehatan') ?>" class="btn btn-sm btn-outline-secondary m-1">Kesehatan</a>
-                                <a href="<?= base_url('web/kategori/pendidikan') ?>" class="btn btn-sm btn-outline-secondary m-1">Pendidikan</a>
-                                <a href="<?= base_url('web/kategori/ekonomi') ?>" class="btn btn-sm btn-outline-secondary m-1">Ekonomi</a>
-                            </div>
+                        <div class="bg-white border border-top-0 p-3 mt-3">
+                            <?php
+                            $categories = $this->db->get('categories')->result();
+                            foreach($categories as $category): ?>
+                                <a href="<?= base_url('web?kategori=' . urlencode($category->id)) ?>" class="btn btn-sm btn-outline-secondary m-1">
+                                    <?= htmlspecialchars($category->name) ?>
+                                </a>
+                            <?php endforeach; ?>
                         </div>
                     </div>
+                    <!-- Categories End -->
+
                     <!-- Tags End -->
                 </div>
             </div>
