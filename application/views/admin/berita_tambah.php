@@ -27,10 +27,6 @@
             <input type="file" name="gambar" class="form-control">
         </div>
         <button type="submit" class="btn btn-success">Simpan</button>
-        <a href="<?= base_url('berita/list') ?>" class="btn btn-secondary">Kembali</a>
+        <a href="<?= base_url('berita') ?>" class="btn btn-secondary">Kembali</a>
     </form>
 </div>
-<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('editor');
-</script> 
