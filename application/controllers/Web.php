@@ -12,9 +12,6 @@ class Web extends CI_Controller {
 	}
 	public function kategori($kategori = null)
 	{
-		if ($kategori === null) {
-			redirect('web');
-		}
 		
 		// Get news by category
 		$data['berita'] = $this->db->where('tag', $kategori)->get('berita')->result();
@@ -27,17 +24,21 @@ class Web extends CI_Controller {
 	}
 	public function single($id = null)
 	{
-		if ($id === null) {
-			redirect('web');
-		}
-		
-		$data['berita'] = $this->db->get('berita')->result(); // for sidebar news
+
+		// Ambil berita untuk sidebar
+		$data['berita'] = $this->db->get('berita')->result();
+
+		// Ambil berita utama
 		$data['single_berita'] = $this->db->where('id', $id)->get('berita')->row();
-		
-		if (!$data['single_berita']) {
-			redirect('web');
-		}
-		
+
+		// Tambah view jika berita ditemukan
+		$this->db->set('view', 'view+1', FALSE);
+		$this->db->where('id', $id);
+		$this->db->update('berita');
+
+		// Refresh data single_berita setelah update views
+		$data['single_berita'] = $this->db->where('id', $id)->get('berita')->row();
+
 		$this->load->view('head_web');
 		$this->load->view('nav_web');
 		$this->load->view('single', $data);
