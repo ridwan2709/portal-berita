@@ -27,7 +27,7 @@ class Auth extends CI_Controller {
 		else
 		{
 			$this->session->set_flashdata('error','Username & Password salah');
-			redirect('login');
+			redirect('auth');
 		}
 	}
 
