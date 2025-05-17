@@ -31,7 +31,7 @@ class Berita extends CI_Controller {
 	{
 		$config['upload_path'] = './assets/uploads/';
 		$config['allowed_types'] = 'gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG';
-		$config['max_size'] = 2048;
+		$config['max_size'] = 5048;
 		$this->load->library('upload', $config);
 		if ($this->upload->do_upload('gambar')) {
 			$upload_data = $this->upload->data();
@@ -59,6 +59,7 @@ class Berita extends CI_Controller {
 
 	public function edit($id)
 	{
+		$data['kategori'] = $this->db->get('categories')->result();
 		$data['berita'] = $this->berita_model->get_by_id($id);
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/sidebar');
@@ -80,7 +81,7 @@ class Berita extends CI_Controller {
 		];
 		$proses = $this->berita_model->update($id, $data);
 		if ($proses) {
-			redirect('berita/list');
+			redirect('berita');
 		}else{
 			echo "gagal update";
 		}
