@@ -1,0 +1,39 @@
+/* Override text colors to white */
+body {
+    color: white !important;
+}
+
+.text-body,
+.text-dark,
+.text-secondary,
+.h4,
+.h6,
+p,
+.section-title h4,
+small {
+    color: white !important;
+}
+
+/* Keep the background dark to ensure text visibility */
+.bg-white {
+    background-color: #1a1a1a !important;
+}
+
+/* Ensure borders are visible */
+.border {
+    border-color: #333333 !important;
+}
+
+/* Keep some elements with specific colors for contrast */
+.badge-primary {
+    color: white !important;
+}
+
+/* Ensure links are visible */
+a:not(.btn):not(.badge) {
+    color: #ffffff !important;
+}
+
+a:not(.btn):not(.badge):hover {
+    color: #cccccc !important;
+} 

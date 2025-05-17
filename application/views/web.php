@@ -136,7 +136,7 @@
                                 href=""><?= $news->tag; ?></a>
                             <a class="text-white" href=""><small><?= $news->tanggal; ?></small></a>
                         </div>
-                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href=""><?= $news->judul; ?></a>
+                        <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="<?= base_url('web/single/'.$news->id) ?>"><?= $news->judul; ?></a>
                     </div>
                 </div>
                 <?php endforeach; ?>
@@ -159,7 +159,8 @@
                             </div>
                         </div>
 
-                        <?php foreach ($berita as $value): ?>
+                        <?php $count = 0; foreach ($berita as $value): ?>
+                            <?php if($count < 5): ?>
                             <div class="col-lg-6">
                                 <div class="position-relative mb-3">
                                     <img class="img-fluid w-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
@@ -169,7 +170,7 @@
                                                 href=""><?= $value->tag; ?></a>
                                             <a class="text-body" href=""><small><?= $value->tanggal; ?></small></a>
                                         </div>
-                                        <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?= $value->judul; ?></a>
+                                        <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="<?= base_url('web/single/'.$value->id) ?>"><?= $value->judul; ?></a>
                                         <p class="m-0"><?= $value->isi ?></p>
                                     </div>
                                     <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
@@ -180,6 +181,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php endif; ?>
+                            <?php $count++; ?>
                        <?php endforeach; ?>
                     </div>
                 </div>
@@ -192,8 +195,8 @@
                             <h4 class="m-0 text-uppercase font-weight-bold">Tranding Topik</h4>
                         </div>
                         <div class="bg-white border border-top-0 p-3 mt-3">
-
-                            <?php foreach ($berita as $tranding) : ?>
+                            <?php $count = 0; foreach ($berita as $tranding) : ?>
+                                <?php if($count < 3): ?>
                                     <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                         <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
                                         <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
@@ -201,11 +204,12 @@
                                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?= $tranding->tag ?></a>
                                                 <a class="text-body" href=""><small><?= $tranding->tanggal ?></small></a>
                                             </div>
-                                            <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href=""><?= $tranding->judul ?></a>
+                                            <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="<?= base_url('web/single/'.$tranding->id) ?>"><?= $tranding->judul ?></a>
                                         </div>
                                     </div>
+                                <?php endif; ?>
+                                <?php $count++; ?>
                             <?php endforeach; ?>
-
                         </div>
                     </div>
                     <!-- Popular News End -->
@@ -217,16 +221,12 @@
                         </div>
                         <div class="bg-white border border-top-0 p-3">
                             <div class="d-flex flex-wrap m-n1">
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Politics</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Corporate</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Health</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Education</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Science</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Business</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Foods</a>
-                                <a href="" class="btn btn-sm btn-outline-secondary m-1">Travel</a>
+                                <a href="<?= base_url('web/kategori/teknologi') ?>" class="btn btn-sm btn-outline-secondary m-1">Teknologi</a>
+                                <a href="<?= base_url('web/kategori/olahraga') ?>" class="btn btn-sm btn-outline-secondary m-1">Olahraga</a>
+                                <a href="<?= base_url('web/kategori/politik') ?>" class="btn btn-sm btn-outline-secondary m-1">Politik</a>
+                                <a href="<?= base_url('web/kategori/kesehatan') ?>" class="btn btn-sm btn-outline-secondary m-1">Kesehatan</a>
+                                <a href="<?= base_url('web/kategori/pendidikan') ?>" class="btn btn-sm btn-outline-secondary m-1">Pendidikan</a>
+                                <a href="<?= base_url('web/kategori/ekonomi') ?>" class="btn btn-sm btn-outline-secondary m-1">Ekonomi</a>
                             </div>
                         </div>
                     </div>
