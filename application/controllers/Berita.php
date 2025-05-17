@@ -20,27 +20,38 @@ class Berita extends CI_Controller {
 
 	public function tambah()
 	{
+		$data['kategori'] = $this->db->get('categories')->result();
 		$this->load->view('admin/template/header');
 		$this->load->view('admin/template/sidebar');
-		$this->load->view('admin/berita_tambah');
+		$this->load->view('admin/berita_tambah', $data);
 		$this->load->view('admin/template/footer');
 	}
 
 	public function simpan()
 	{
+		$config['upload_path'] = './assets/uploads/';
+		$config['allowed_types'] = 'gif|jpg|jpeg|png';
+		$config['max_size'] = 2048;
+		$this->load->library('upload', $config);
+		if ($this->upload->do_upload('gambar')) {
+			$upload_data = $this->upload->data();
+			$gambar = $upload_data['file_name'];
+		} else {
+			$gambar = '';
+		}
 		$data  =[
 			'judul' => $this->input->post('judul'),
 			'isi' => $this->input->post('isi'),
 			'tag' => $this->input->post('tag'),
 			'id_kategori' => $this->input->post('id_kategori'),
-			'gambar' => $this->input->post('gambar'),
+			'gambar' => $gambar,
 			'tanggal' => date('Y-m-d H:i:s'),
 			'user_id' => 1,
 			'link' => urlencode($this->input->post('judul'))
 		];
 		$proses = $this->berita_model->simpan($data);
 		if ($proses) {
-			redirect('berita/list');
+			redirect('berita');
 		}else{
 			echo "gagal";
 		}
