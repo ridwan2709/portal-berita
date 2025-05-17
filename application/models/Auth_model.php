@@ -29,19 +29,16 @@ class Auth_model extends CI_Model
 
 		// cek apakah user sudah terdaftar?
 		if (!$user) {
-			return FALSE;
+			var_dump('username tidak ada');
 		}
 
 		// cek apakah password-nya benar?
 		if (!password_verify($password, $user->password)) {
-			return FALSE;
+			var_dump('password salah');
 		}
 
 		// bikin session
-		$this->session->set_userdata([self::SESSION_KEY => $user->id]);
-		$this->_update_last_login($user->id);
-
-		return $this->session->has_userdata(self::SESSION_KEY);
+		return true;
 	}
 // Method current_user() untuk mendapatkan data user yang sedang login. Fungsi ini akan menghasilkan null jika user tidak sedang login, dan akan menghasilkan data objek dari user yang sedang login jika status user sedang login.
 	public function current_user()
