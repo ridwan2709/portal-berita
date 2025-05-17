@@ -24,7 +24,7 @@
                     <span>Dashboard</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?= base_url('Dashboard') ?>">
+                <a class="nav-link" href="<?= base_url('Berita') ?>">
                     <i class="fas fa-fw fa-book"></i>
                     <span>Berita</span></a>
             </li>

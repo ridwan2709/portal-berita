@@ -24,7 +24,8 @@
         </div>
         <div class="form-group">
             <label>Gambar</label>
-            <input type="file" name="gambar" class="form-control">
+            <input type="file" name="gambar" class="form-control" accept="image/*" required>
+            <small class="form-text text-muted">Format yang diizinkan: JPG, JPEG, PNG. Maksimal ukuran: 2MB</small>
         </div>
         <button type="submit" class="btn btn-success">Simpan</button>
         <a href="<?= base_url('berita') ?>" class="btn btn-secondary">Kembali</a>

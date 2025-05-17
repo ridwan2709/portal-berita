@@ -6,7 +6,7 @@
         </div>
         <div class="card-body">
             <?php if (!empty($berita->gambar)): ?>
-                <img src="<?= base_url('uploads/berita/' . $berita->gambar) ?>" alt="Gambar Berita" class="img-fluid mb-3" style="max-width:400px;">
+                <img src="<?= base_url('assets/uploads/' . $berita->gambar) ?>" alt="Gambar Berita" class="img-fluid mb-3" style="max-width:400px;">
             <?php endif; ?>
             <p><strong>Kategori:</strong> <?= $berita->nama_kategori ?? '-' ?></p>
             <p><strong>Tag:</strong> <?= $berita->tag ? htmlspecialchars($berita->tag) : '-' ?></p>
