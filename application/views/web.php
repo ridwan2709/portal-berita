@@ -145,7 +145,6 @@
     </div>
     <!-- Featured News Slider End -->
 
-
     <!-- News With Sidebar Start -->
     <div class="container-fluid">
         <div class="container">
@@ -170,8 +169,8 @@
                                                 href=""><?= $value->tag; ?></a>
                                             <a class="text-body" href=""><small><?= $value->tanggal; ?></small></a>
                                         </div>
-                                        <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href="<?= base_url('web/single/'.$value->id) ?>"><?= $value->judul; ?></a>
-                                        <p class="m-0"><?= $value->isi ?></p>
+                                        <a class="h4 d-block mb-3 text-secondary text-uppercase font-weight-bold" href=""><?= $value->judul; ?></a>
+                                        <p class="m-0"><?= substr($value->isi, 0, 50) . '...' ?></p>
                                     </div>
                                     <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                                         <div class="d-flex align-items-center">
