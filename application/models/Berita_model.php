@@ -12,4 +12,26 @@ class Berita_model extends CI_Model
         }
         
     }
+
+    public function get_all()
+    {
+        return $this->db->get('berita')->result();
+    }
+
+    public function get_by_id($id)
+    {
+        return $this->db->get_where('berita', ['id' => $id])->row();
+    }
+
+    public function update($id, $data)
+    {
+        $this->db->where('id', $id);
+        return $this->db->update('berita', $data);
+    }
+
+    public function hapus($id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->delete('berita');
+    }
 }
