@@ -15,15 +15,7 @@
                     ?>
                     <a href="<?php echo base_url('web')?>" class="nav-item nav-link <?php echo ($uri1 == 'web' && ($uri2 == '' || $uri2 == null)) ? 'active' : ''; ?>">Home</a>
                     <a href="<?php echo base_url('web/kategori')?>" class="nav-item nav-link <?php echo ($uri1 == 'web' && $uri2 == 'kategori') ? 'active' : ''; ?>">Category</a>
-                    <div class="nav-item dropdown <?php echo ($uri1 == 'web' && $uri2 == 'dropdown') ? 'active' : ''; ?>">
-                        <a href="#" class="nav-link dropdown-toggle <?php echo ($uri1 == 'web' && $uri2 == 'dropdown') ? 'active' : ''; ?>" data-toggle="dropdown">Dropdown</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="#" class="dropdown-item">Menu item 1</a>
-                            <a href="#" class="dropdown-item">Menu item 2</a>
-                            <a href="#" class="dropdown-item">Menu item 3</a>
-                        </div>
-                    </div>
-                    <a href="contact.html" class="nav-item nav-link <?php echo ($uri1 == 'contact') ? 'active' : ''; ?>">Contact</a>
+                    <a href="#contact" class="nav-item nav-link ">Contact</a>
                 </div>
                 <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
                     <input type="text" class="form-control border-0" placeholder="Keyword">

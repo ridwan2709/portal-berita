@@ -7,7 +7,7 @@
             <div class="owl-carousel news-carousel carousel-item-4 position-relative">
                 <?php foreach ($berita as $news) : ?>
                 <div class="position-relative overflow-hidden" style="height: 300px;">
-                    <img class="img-fluid h-100" src="" alt="gambar berita" style="object-fit: cover;">
+                    <img class="img-fluid h-100" src="<?= base_url('assets/uploads/'.$news->gambar) ?>" alt="gambar berita" style="object-fit: cover;">
                     <div class="overlay">
                         <div class="mb-2">
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
@@ -21,6 +21,7 @@
             </div>
         </div>
     </div>
+    
     <!-- Featured News Slider End -->
 
     <!-- News With Sidebar Start -->
@@ -50,7 +51,7 @@
                             <?php if($count < 5): ?>
                             <div class="col-lg-6">
                                 <div class="position-relative mb-3">
-                                    <img class="img-fluid w-100" src="img/news-700x435-1.jpg" style="object-fit: cover;">
+                                    <img class="img-fluid w-100" src="<?= base_url('assets/uploads/'.$value->gambar) ?>" style="object-fit: cover;">
                                     <div class="bg-white border border-top-0 p-4">
                                         <div class="mb-2">
                                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
@@ -85,7 +86,7 @@
                             <?php $count = 0; foreach ($berita as $tranding) : ?>
                                 <?php if($count < 3): ?>
                                     <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                        <img class="img-fluid" src="img/news-110x110-1.jpg" alt="">
+                                        <img class="img-fluid" src="<?= base_url('assets/uploads/'.$tranding->gambar) ?>" alt="">
                                         <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                             <div class="mb-2">
                                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?= $tranding->tag ?></a>
@@ -100,23 +101,23 @@
                         </div>
                     </div>
                     <!-- Popular News End -->
-
-                    <!-- Tags Start -->
+                    <!-- Categories Start -->
                     <div class="mb-3">
                         <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tags</h4>
+                            <h4 class="m-0 text-uppercase font-weight-bold">Kategori</h4>
                         </div>
-                        <div class="bg-white border border-top-0 p-3">
-                            <div class="d-flex flex-wrap m-n1">
-                                <a href="<?= base_url('web/kategori/teknologi') ?>" class="btn btn-sm btn-outline-secondary m-1">Teknologi</a>
-                                <a href="<?= base_url('web/kategori/olahraga') ?>" class="btn btn-sm btn-outline-secondary m-1">Olahraga</a>
-                                <a href="<?= base_url('web/kategori/politik') ?>" class="btn btn-sm btn-outline-secondary m-1">Politik</a>
-                                <a href="<?= base_url('web/kategori/kesehatan') ?>" class="btn btn-sm btn-outline-secondary m-1">Kesehatan</a>
-                                <a href="<?= base_url('web/kategori/pendidikan') ?>" class="btn btn-sm btn-outline-secondary m-1">Pendidikan</a>
-                                <a href="<?= base_url('web/kategori/ekonomi') ?>" class="btn btn-sm btn-outline-secondary m-1">Ekonomi</a>
-                            </div>
+                        <div class="bg-white border border-top-0 p-3 mt-3">
+                            <?php
+                            $categories = $this->db->get('categories')->result();
+                            foreach($categories as $category): ?>
+                                <a href="<?= base_url('web?kategori=' . urlencode($category->id)) ?>" class="btn btn-sm btn-outline-secondary m-1">
+                                    <?= htmlspecialchars($category->name) ?>
+                                </a>
+                            <?php endforeach; ?>
                         </div>
                     </div>
+                    <!-- Categories End -->
+
                     <!-- Tags End -->
                 </div>
             </div>
