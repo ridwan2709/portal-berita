@@ -76,7 +76,7 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-	'username' => 'u820472648_portal_berita',
+	'username' => 'root',
 	'password' => '9P@pCnN$|=F#',
 	'database' => 'db_berita',
 	'dbdriver' => 'mysqli',
