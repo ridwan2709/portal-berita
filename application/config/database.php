@@ -78,7 +78,7 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'u820472648_portal_berita',
 	'password' => '9P@pCnN$|=F#',
-	'database' => 'u820472648_portal_berita',
+	'database' => 'db_berita',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
