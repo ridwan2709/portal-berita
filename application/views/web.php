@@ -68,7 +68,7 @@
                                     </div>
                                     <div class="d-flex justify-content-between bg-white border border-top-0 p-4">
                                         <div class="d-flex align-items-center">
-                                            <img class="rounded-circle mr-2" src="img/user.jpg" width="25" height="25" alt="">
+                                            <img class="rounded-circle mr-2" src="assets/uploads/logomu.png" width="25" height="25" alt="">
                                             <small><?= $value->user_id ?></small>
                                         </div>
                                     </div>
