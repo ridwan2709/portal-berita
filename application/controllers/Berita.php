@@ -46,7 +46,7 @@ class Berita extends CI_Controller {
 			'id_kategori' => $this->input->post('id_kategori'),
 			'gambar' => $gambar,
 			'tanggal' => date('Y-m-d H:i:s'),
-			'user_id' => 1,
+			'user_id' => $this->session->userdata('user_id'),
 			'link' => urlencode($this->input->post('judul'))
 		];
 		$proses = $this->berita_model->simpan($data);
