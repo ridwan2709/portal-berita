@@ -2,6 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Web extends CI_Controller {
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->model('berita_model');
+	}
+
 	public function index()
 	{
 		$kategori = $this->input->get('kategori');
@@ -29,20 +35,16 @@ class Web extends CI_Controller {
 	}
 	public function single($id = null)
 	{
-
 		// Ambil berita untuk sidebar
 		$data['berita'] = $this->db->get('berita')->result();
 
 		// Ambil berita utama
 		$data['single_berita'] = $this->db->where('id', $id)->get('berita')->row();
 
-		// Tambah view jika berita ditemukan
-		$this->db->set('view', 'view+1', FALSE);
-		$this->db->where('id', $id);
-		$this->db->update('berita');
-
-		// Refresh data single_berita setelah update views
-		$data['single_berita'] = $this->db->where('id', $id)->get('berita')->row();
+		// Increment view count
+		if ($data['single_berita']) {
+			$this->berita_model->increment_view($id);
+		}
 
 		$this->load->view('head_web');
 		$this->load->view('nav_web');
