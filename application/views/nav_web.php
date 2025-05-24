@@ -17,13 +17,7 @@
                     <a href="<?php echo base_url('web/kategori')?>" class="nav-item nav-link <?php echo ($uri1 == 'web' && $uri2 == 'kategori') ? 'active' : ''; ?>">Category</a>
                     <a href="#contact" class="nav-item nav-link ">Contact</a>
                 </div>
-                <div class="input-group ml-auto d-none d-lg-flex" style="width: 100%; max-width: 300px;">
-                    <input type="text" class="form-control border-0" placeholder="Keyword">
-                    <div class="input-group-append">
-                        <button class="input-group-text bg-primary text-dark border-0 px-3"><i
-                                class="fa fa-search"></i></button>
-                    </div>
-                </div>
+                
             </div>
         </nav>
     </div>
