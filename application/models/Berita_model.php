@@ -17,6 +17,13 @@ class Berita_model extends CI_Model
         return $this->db->get_where('berita', ['id' => $id])->row();
     }
 
+    public function get_hot_news()
+    {
+        $this->db->order_by('view', 'desc');
+        $this->db->limit(5);
+        return $this->db->get('berita')->row();
+    }
+
     public function get_by_category($category_id)
     {
         return $this->db->where('id_kategori', $category_id)

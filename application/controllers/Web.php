@@ -26,6 +26,7 @@ class Web extends CI_Controller {
 			? $this->berita_model->get_by_category($kategori_id)
 			: $this->berita_model->get_all();
 		$this->data['kategori'] = $this->category_model->get_all();
+		$this->data['berita_viral'] = $this->berita_model->get_hot_news();
 		$this->data['view'] = 'web';
 		$this->load_views();
 	}

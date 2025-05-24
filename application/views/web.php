@@ -25,14 +25,14 @@
 <div class="container-fluid pt-5 mb-3">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="section-title">
                     <h4 class="m-0 text-uppercase font-weight-bold">Berita Terbaru</h4>
                     <a href="<?= base_url('web/kategori') ?>" class="btn btn-sm">Lihat Semua <i class="fa fa-chevron-right"></i></a>
                 </div>
                 <div class="row">
                     <?php foreach ($berita as $news) : ?>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="card">
                                 <img class="card-img-top" src="<?= base_url('assets/uploads/'.$news->gambar) ?>" alt="gambar berita" style="object-fit: cover;">
                                 <div class="card-body">
@@ -46,16 +46,6 @@
                                 </div>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="section-title">
-                    <h4 class="m-0 text-uppercase font-weight-bold">Kategori</h4>
-                </div>
-                <div class="list-group">
-                    <?php foreach ($kategori as $kategori) : ?>
-                        <a href="<?= base_url('web/kategori/'.$kategori->id) ?>" class="list-group-item list-group-item-action"><?= $kategori->name ?></a>
                     <?php endforeach; ?>
                 </div>
             </div>
