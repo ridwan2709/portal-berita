@@ -17,7 +17,7 @@
 
     /* Ukuran font untuk judul berita terkait */
     .trending-judul {
-        font-size: 14px;
+        font-size: 10px;
         font-weight: bold;
         line-height: 1.4;
         color: #222;
