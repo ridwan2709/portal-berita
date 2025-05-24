@@ -3,27 +3,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
-            <style>
-    /* Ukuran font untuk tag */
-    .trending-tag {
-        font-size: 11px;
-    }
-
-    /* Ukuran font untuk tanggal */
-    .trending-tanggal {
-        font-size: 12px;
-        color: #777;
-    }
-
-    /* Ukuran font untuk judul berita terkait */
-    .trending-judul {
-        font-size: 10px;
-        font-weight: bold;
-        line-height: 1.4;
-        color: #222;
-    }
-</style>
-
                 <!-- News Detail Start -->
                 <div class="position-relative mb-3">
                     <img class="img-fluid w-100" src="<?= base_url('assets/uploads/'.$single_berita->gambar) ?>" style="object-fit: cover; height: 500px;">
@@ -71,18 +50,18 @@
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="<?= base_url('assets/uploads/'.$trending->gambar) ?>" style="width: 110px; height: 110px; object-fit: cover;" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-    <div class="mb-2">
-        <a class="trending-tag badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" 
-            href=""><?= $trending->tag ?></a>
-        <a class="trending-tanggal text-body" href="">
-            <small><?= date('d M Y', strtotime($trending->tanggal)) ?></small>
-        </a>
-    </div>
-    <a class="trending-judul h6 m-0 text-secondary text-uppercase font-weight-bold" 
-        href="<?= base_url('web/single/'.$trending->id) ?>">
-        <?= $trending->judul ?>
-    </a>
-</div>
+                            <div class="mb-2">
+                                <a class="trending-tag badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" 
+                                    href=""><?= $trending->tag ?></a>
+                                <a class="trending-tanggal text-body" href="">
+                                    <small><?= date('d M Y', strtotime($trending->tanggal)) ?></small>
+                                </a>
+                            </div>
+                            <a class="trending-judul h6 m-0 text-secondary text-uppercase font-weight-bold" 
+                                href="<?= base_url('web/single/'.$trending->id) ?>">
+                                <?= $trending->judul ?>
+                            </a>
+                        </div>
 
                             </div>
                             <?php endif; ?>
