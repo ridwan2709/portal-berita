@@ -69,23 +69,45 @@ class Berita extends CI_Controller {
 
 	public function update($id)
 	{
-		$data  =[
-			'judul' => $this->input->post('judul'),
-			'isi' => $this->input->post('isi'),
-			'tag' => $this->input->post('tag'),
-			'id_kategori' => $this->input->post('id_kategori'),
-			'gambar' => $this->input->post('gambar'),
-			'tanggal' => date('Y-m-d H:i:s'),
-			'user_id' => 1,
-			'link' => urlencode($this->input->post('judul'))
-		];
-		$proses = $this->berita_model->update($id, $data);
-		if ($proses) {
-			redirect('berita');
-		}else{
-			echo "gagal update";
+	$gambar_lama = $this->input->post('gambar_lama');
+
+	$config['upload_path'] = './assets/uploads/';
+	$config['allowed_types'] = 'gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG';
+	$config['max_size'] = 5048;
+
+	$this->load->library('upload', $config);
+
+	if ($this->upload->do_upload('gambar')) {
+		$upload_data = $this->upload->data();
+		$gambar_baru = $upload_data['file_name'];
+
+		// Hapus gambar lama jika ada
+		if (!empty($gambar_lama) && file_exists('./assets/uploads/' . $gambar_lama)) {
+			unlink('./assets/uploads/' . $gambar_lama);
 		}
+	} else {
+		$gambar_baru = $gambar_lama; // jika tidak upload baru, pakai yang lama
 	}
+
+	$data = [
+		'judul' => $this->input->post('judul'),
+		'isi' => $this->input->post('isi'),
+		'tag' => $this->input->post('tag'),
+		'id_kategori' => $this->input->post('id_kategori'),
+		'gambar' => $gambar_baru,
+		'tanggal' => date('Y-m-d H:i:s'),
+		'user_id' => 1,
+		'link' => urlencode($this->input->post('judul'))
+	];
+
+	$proses = $this->berita_model->update($id, $data);
+	if ($proses) {
+		redirect('berita');
+	} else {
+		echo "gagal update";
+	}
+}
+
 
 	public function hapus($id)
 	{

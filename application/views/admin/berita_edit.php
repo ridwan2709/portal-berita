@@ -22,16 +22,17 @@
             <label>Tag</label>
             <input type="text" name="tag" class="form-control" value="<?= htmlspecialchars($berita->tag) ?>">
         </div>
-        <div class="form-group">
-            <label>Gambar</label>
-            <?php if (!empty($berita->gambar)): ?>
-                <div class="mb-2">
-                    <img src="<?= base_url('uploads/berita/' . $berita->gambar) ?>" alt="Gambar Berita" style="max-width: 200px;">
-                </div>
-            <?php endif; ?>
-            <input type="file" name="gambar" class="form-control">
-            <input type="hidden" name="gambar_lama" value="<?= htmlspecialchars($berita->gambar) ?>">
-        </div>
+        <!-- tampilkan gambar lama -->
+        <?php if (!empty($berita->gambar)): ?>
+	    <img src="<?= base_url('assets/uploads/' . $berita->gambar) ?>" alt="Gambar Berita" style="max-width: 200px;">
+        <?php endif; ?>
+
+        <!-- upload file -->
+        <input type="file" name="gambar" class="form-control" accept="image/*" required>
+
+        <!-- hidden input untuk gambar lama -->
+        <input type="hidden" name="gambar_lama" value="<?= htmlspecialchars($berita->gambar) ?>">
+
         <button type="submit" class="btn btn-success">Update</button>
         <a href="<?= base_url('berita') ?>" class="btn btn-secondary">Kembali</a>
     </form>
