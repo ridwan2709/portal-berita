@@ -16,11 +16,6 @@
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="<?= base_url('web/single/'.$news->id) ?>"><?= $news->judul; ?></a>
                     </div>
-                    <style>
-    .trending-topik .h6 {
-        font-size: 10px;
-    }
-</style>
                 </div>
                 <?php endforeach; ?>
             </div>
