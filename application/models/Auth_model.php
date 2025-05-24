@@ -27,6 +27,7 @@ class Auth_model extends CI_Model
                 $this->session->set_userdata('username',$username);
 				$this->session->set_userdata('nama',$data_user->nama);
 				$this->session->set_userdata('is_login',TRUE);
+				$this->session->set_userdata('user_id',$data_user->id);
                 return TRUE;
             } else {
                 return FALSE;
