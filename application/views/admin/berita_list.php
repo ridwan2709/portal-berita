@@ -21,7 +21,7 @@
                 <td>
                     <a href="<?= base_url('berita/detail/'.$row->id) ?>" class="btn btn-info btn-sm me-1 mt-1">Detail</a>
                     <a href="<?= base_url('berita/edit/'.$row->id) ?>" class="btn btn-warning btn-sm me-1 mt-1">Edit</a>
-                    <a href="<?= base_url('berita/hapus/'.$row->id) ?>" class="btn btn-danger btn-sm mt-2" onclick="return confirm('Yakin hapus?')">Hapus</a>
+                    <a href="<?= base_url('berita/hapus/'.$row->id) ?>" class="btn btn-danger btn-sm mt-1" onclick="return confirm('Yakin hapus?')">Hapus</a>
                 </td>
             </tr>
             <?php endforeach; ?>
