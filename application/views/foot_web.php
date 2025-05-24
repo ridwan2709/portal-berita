@@ -25,10 +25,15 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
                 <div class="m-n1">
-                    <a href="" class="btn btn-sm btn-secondary m-1">Pendidikan</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Internasional</a>
-                    <a href="" class="btn btn-sm btn-secondary m-1">Berita</a>
+                    <?php
+                    $categories = $this->db->get('categories')->result();
+                    foreach($categories as $category): ?>
+                        <a href="<?= base_url('web?kategori=' . urlencode($category->id)) ?>" class="btn btn-sm btn-secondary m-1">
+                            <?= htmlspecialchars($category->name) ?>
+                        </a>
+                    <?php endforeach; ?>
                 </div>
+            </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
