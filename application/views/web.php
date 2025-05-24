@@ -89,10 +89,10 @@
                                         <img class="img-fluid" src="<?= base_url('assets/uploads/'.$tranding->gambar) ?>" style="width: 110px; height: 110px; object-fit: cover;" alt="">
                                         <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
                                             <div class="mb-2">
-                                                <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?= $tranding->tag ?></a>
+                                                <a class="badge badge-primary text-uppercase font-weight-normal p-1 mr-2" href=""><?= $tranding->tag ?></a>
                                                 <a class="text-body" href=""><small><?= $tranding->tanggal ?></small></a>
                                             </div>
-                                            <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="<?= base_url('web/single/'.$tranding->id) ?>"><?= $tranding->judul ?></a>
+                                            <a class="h5 m-0 text-secondary text-uppercase" href="<?= base_url('web/single/'.$tranding->id) ?>"><?= $tranding->judul ?></a>
                                         </div>
                                     </div>
                                 <?php endif; ?>
