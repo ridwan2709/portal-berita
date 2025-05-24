@@ -6,25 +6,28 @@ class Category_model extends CI_Model {
 
     public function __construct() {
         parent::__construct();
+        $this->load->database();
     }
 
     public function get_all() {
-        return $this->db->get($this->table)->result();
+        return $this->db->order_by('name', 'ASC')->get($this->table)->result();
     }
 
     public function get_by_id($id) {
         return $this->db->get_where($this->table, ['id' => $id])->row();
     }
 
-    public function create($data) {
+    public function simpan($data) {
         return $this->db->insert($this->table, $data);
     }
 
     public function update($id, $data) {
-        return $this->db->update($this->table, $data, ['id' => $id]);
+        $this->db->where('id', $id);
+        return $this->db->update($this->table, $data);
     }
 
-    public function delete($id) {
-        return $this->db->delete($this->table, ['id' => $id]);
+    public function hapus($id) {
+        $this->db->where('id', $id);
+        return $this->db->delete($this->table);
     }
 } 
