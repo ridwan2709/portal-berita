@@ -85,9 +85,9 @@
                         <div class="bg-white border border-top-0 p-3 mt-3">
                             <?php $count = 0; foreach ($berita as $tranding) : ?>
                                 <?php if($count < 3): ?>
-                                    <div class="d-flex align-items-center bg-white mb-3" style="height: 50px;">
+                                    <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                         <img class="img-fluid" src="<?= base_url('assets/uploads/'.$tranding->gambar) ?>" alt="">
-                                        <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
+                                        <div class="w-50 h-50 px-3 d-flex flex-column justify-content-center border border-left-0">
                                             <div class="mb-2">
                                                 <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?= $tranding->tag ?></a>
                                                 <a class="text-body" href=""><small><?= $tranding->tanggal ?></small></a>
