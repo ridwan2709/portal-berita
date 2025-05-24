@@ -88,15 +88,15 @@
                                     <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                         <img class="img-fluid" src="<?= base_url('assets/uploads/'.$tranding->gambar) ?>" style="width: 110px; height: 110px; object-fit: cover;" alt="">
                                         <div class="trending-topik w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-    <div class="mb-2">
-        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?= $tranding->tag ?></a>
+                                <div class="mb-2">
+     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?= $tranding->tag ?></a>
         <a class="text-body" href=""><small><?= $tranding->tanggal ?></small></a>
     </div>
     <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="<?= base_url('web/single/'.$tranding->id) ?>"><?= $tranding->judul ?></a>
 </div>
 <style>
     .trending-topik .h6 {
-        font-size: 14px;
+        font-size: 10px;
     }
 </style>
 
