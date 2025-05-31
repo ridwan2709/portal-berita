@@ -21,9 +21,7 @@
                                                 Jumlah Berita</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_berita; ?></div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -39,9 +37,7 @@
                                                 Jumlah Kategori</div>
                                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $jumlah_kategori; ?></div>
                                         </div>
-                                        <div class="col-auto">
-                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                             </div>

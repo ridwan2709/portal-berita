@@ -11,7 +11,7 @@
                 <p class="font-weight-medium"><i class="fa fa-phone-alt mr-2"></i>(0266) 246150</p>
                 <p class="font-weight-medium"><i class="fa fa-envelope mr-2"></i>info@smk Mihadunal ula.com</p>
                 <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">Follow Us</h6>
-</section>
+                
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
@@ -25,15 +25,33 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="mb-4 text-white text-uppercase font-weight-bold">Categories</h5>
                 <div class="m-n1">
-                    <?php
-                    $categories = $this->db->get('categories')->result();
-                    foreach($categories as $category): ?>
-                        <a href="<?= base_url('web?kategori=' . urlencode($category->id)) ?>" class="btn btn-sm btn-secondary m-1">
-                            <?= htmlspecialchars($category->name) ?>
-                        </a>
-                    <?php endforeach; ?>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Pendidikan</a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Internasional</a>
+                    <a href="" class="btn btn-sm btn-secondary m-1">Berita</a>
                 </div>
             </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h5 class="mb-4 text-white text-uppercase font-weight-bold">Flickr Photos</h5>
+                <div class="row">
+                    <div class="col-4 mb-3">
+                        <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <a href=""><img class="w-100" src="img/news-110x110-2.jpg" alt=""></a>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <a href=""><img class="w-100" src="img/news-110x110-3.jpg" alt=""></a>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <a href=""><img class="w-100" src="img/news-110x110-4.jpg" alt=""></a>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <a href=""><img class="w-100" src="img/news-110x110-5.jpg" alt=""></a>
+                    </div>
+                    <div class="col-4 mb-3">
+                        <a href=""><img class="w-100" src="img/news-110x110-1.jpg" alt=""></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

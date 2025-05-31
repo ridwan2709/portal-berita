@@ -16,11 +16,6 @@
                         </div>
                         <a class="h6 m-0 text-white text-uppercase font-weight-semi-bold" href="<?= base_url('web/single/'.$news->id) ?>"><?= $news->judul; ?></a>
                     </div>
-                    <style>
-    .trending-topik .h6 {
-        font-size: 10px;
-    }
-</style>
                 </div>
                 <?php endforeach; ?>
             </div>
@@ -54,7 +49,7 @@
 
                         <?php $count = 0; foreach ($berita as $value): ?>
                             <?php if($count < 5): ?>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="position-relative mb-3">
                                     <img class="img-fluid w-100" src="<?= base_url('assets/uploads/'.$value->gambar) ?>" style="object-fit: cover;">
                                     <div class="bg-white border border-top-0 p-4">
@@ -79,55 +74,27 @@
                        <?php endforeach; ?>
                     </div>
                 </div>
-                
-                <div class="col-lg-4">
-
-                    <!-- Popular News Start -->
-                    <div class="mb-3">
-                        <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Tranding Topik</h4>
-                        </div>
-                        <div class="bg-white border border-top-0 p-3 mt-3">
-                            <?php $count = 0; foreach ($berita as $tranding) : ?>
-                                <?php if($count < 3): ?>
-                                    <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
-                                        <img class="img-fluid" src="<?= base_url('assets/uploads/'.$tranding->gambar) ?>" style="width: 110px; height: 110px; object-fit: cover;" alt="">
-                                        <div class="trending-topik w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                <div class="mb-2">
-                                     <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" href=""><?= $tranding->tag ?></a>
-                                        <a class="text-body" href=""><small><?= $tranding->tanggal ?></small></a>
+                <div class="row">
+                    <?php foreach ($berita as $news) : ?>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img class="card-img-top" src="<?= base_url('assets/uploads/'.$news->gambar) ?>" alt="gambar berita" style="object-fit: cover;">
+                                <div class="card-body">
+                                    <h5 class="card-title"><?= $news->judul ?></h5>
+                                    <p class="card-text"><?= substr($news->isi, 0, 100) ?>...</p>
+                                    <!-- pembuat berita -->
+                                    <p class="card-text"><small class="text-muted"><i class="fa fa-user"></i> <?= $this->db->get_where('user', ['id' => $news->user_id])->row()->username ?></small></p>
+                                    <!-- tanggal berita -->
+                                    <p class="card-text"><small class="text-muted"><i class="fa fa-calendar"></i> <?= $news->tanggal ?></small></p>
+                                    <a href="<?= base_url('web/single/'.$news->id) ?>" class="btn btn-primary btn-sm rounded-pill">Selengkapnya</a>
                                 </div>
-                                     <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" href="<?= base_url('web/single/'.$tranding->id) ?>"><?= $tranding->judul ?></a>
-                                        </div>
-
-
-                                    </div>
-                                <?php endif; ?>
-                                <?php $count++; ?>
-                            <?php endforeach; ?>
+                            </div>
                         </div>
-                    </div>
-                    <!-- Popular News End -->
-                    <!-- Categories Start -->
-                    <div class="mb-3">
-                        <div class="section-title mb-0">
-                            <h4 class="m-0 text-uppercase font-weight-bold">Kategori</h4>
-                        </div>
-                        <div class="bg-white border border-top-0 p-3 mt-3">
-                            <?php
-                            $categories = $this->db->get('categories')->result();
-                            foreach($categories as $category): ?>
-                                <a href="<?= base_url('web?kategori=' . urlencode($category->id)) ?>" class="btn btn-sm btn-outline-secondary m-1">
-                                    <?= htmlspecialchars($category->name) ?>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    <!-- Categories End -->
-
-                    <!-- Tags End -->
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
+        
     </div>
-    <!-- News With Sidebar End -->
+</div>
+

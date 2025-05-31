@@ -36,9 +36,7 @@
                                         Login</button>
                                     </form>
                                     <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="<?= base_url('register')?>">Create an Account!</a>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>

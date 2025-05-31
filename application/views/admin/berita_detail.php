@@ -11,7 +11,7 @@
             <p><strong>Kategori:</strong> <?= $berita->nama_kategori ?? '-' ?></p>
             <p><strong>Tag:</strong> <?= $berita->tag ? htmlspecialchars($berita->tag) : '-' ?></p>
             <p><strong>Tanggal:</strong> <?= date('d M Y, H:i', strtotime($berita->tanggal)) ?></p>
-            <p><strong>Jumlah Dilihat:</strong> <?= isset($berita->jumlah_dilihat) ? $berita->jumlah_dilihat : '0' ?> kali</p>
+            <p><strong>Jumlah Dilihat:</strong> <?= isset($berita->view) ? $berita->view : '0' ?> kali</p>
             <hr>
             <div>
                 <?= $berita->isi ?>

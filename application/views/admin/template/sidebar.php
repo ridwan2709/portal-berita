@@ -33,6 +33,11 @@
                     <i class="fas fa-fw fa-book"></i>
                     <span>Kategori</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('user') ?>">
+                    <i class="fas fa-fw fa-book"></i>
+                    <span>User</span></a>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -74,7 +79,7 @@
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                     aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <a class="dropdown-item" href="<?php echo base_url('Auth/logout') ?>" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                         Logout
                     </a>

@@ -23,6 +23,28 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="<?= base_url('template-web/') ?>css/style.css" rel="stylesheet">
+
+    <style>
+    /* Ukuran font untuk tag */
+    .trending-tag {
+        font-size: 11px;
+    }
+
+    /* Ukuran font untuk tanggal */
+    .trending-tanggal {
+        font-size: 12px;
+        color: #777;
+    }
+
+    /* Ukuran font untuk judul berita terkait */
+    .trending-judul {
+        font-size: 10px;
+        font-weight: bold;
+        line-height: 1.4;
+        color: #222;
+    }
+</style>
+
 </head>
 
 <body>
