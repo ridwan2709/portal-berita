@@ -54,7 +54,7 @@
 
                         <?php $count = 0; foreach ($berita as $value): ?>
                             <?php if($count < 5): ?>
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="position-relative mb-3">
                                     <img class="img-fluid w-100" src="<?= base_url('assets/uploads/'.$value->gambar) ?>" style="object-fit: cover;">
                                     <div class="bg-white border border-top-0 p-4">
