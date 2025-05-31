@@ -37,9 +37,10 @@ class Auth extends CI_Controller {
 		$this->session->unset_userdata('nama');
 		$this->session->unset_userdata('is_login');
 		$this->session->unset_userdata('user_id');
-		redirect('Auth');S
+		redirect('Auth');
 	}
+}
 
 	
 
-}
+
