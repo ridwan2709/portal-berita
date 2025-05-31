@@ -11,7 +11,7 @@
                 <p class="font-weight-medium"><i class="fa fa-phone-alt mr-2"></i>(0266) 246150</p>
                 <p class="font-weight-medium"><i class="fa fa-envelope mr-2"></i>info@smk Mihadunal ula.com</p>
                 <h6 class="mt-4 mb-3 text-white text-uppercase font-weight-bold">Follow Us</h6>
-</section>
+                
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-lg btn-secondary btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>

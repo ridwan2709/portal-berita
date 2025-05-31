@@ -11,7 +11,8 @@
                             <a class="badge badge-primary text-uppercase font-weight-semi-bold p-2 mr-2"
                                 href=""><?= $single_berita->tag; ?></a>
                             <a class="text-body" href=""><small><i class="far fa-calendar-alt mr-1"></i><?= date('d M Y', strtotime($single_berita->tanggal)); ?></small></a>
-                            <a class="text-body ml-2" href=""><small><i class="far fa-user mr-1"></i><?= $single_berita->user_id; ?></small></a>
+                            <a class="text-body ml-2" href=""><small><i class="far fa-user mr-1"></i><?= $this->db->get_where('user', ['id' => $single_berita->user_id])->row()->username; ?></small></a>
+                            <a class="text-body ml-2" href=""><small><i class="far fa-eye mr-1"></i><?= number_format($single_berita->view); ?> views</small></a>
                         </div>
                         <h1 class="mb-3 text-secondary text-uppercase font-weight-bold"><?= $single_berita->judul; ?></h1>
                         
@@ -49,14 +50,19 @@
                             <div class="d-flex align-items-center bg-white mb-3" style="height: 110px;">
                                 <img class="img-fluid" src="<?= base_url('assets/uploads/'.$trending->gambar) ?>" style="width: 110px; height: 110px; object-fit: cover;" alt="">
                                 <div class="w-100 h-100 px-3 d-flex flex-column justify-content-center border border-left-0">
-                                    <div class="mb-2">
-                                        <a class="badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" 
-                                            href=""><?= $trending->tag ?></a>
-                                        <a class="text-body" href=""><small><?= date('d M Y', strtotime($trending->tanggal)) ?></small></a>
-                                    </div>
-                                    <a class="h6 m-0 text-secondary text-uppercase font-weight-bold" 
-                                        href="<?= base_url('web/single/'.$trending->id) ?>"><?= $trending->judul ?></a>
-                                </div>
+                            <div class="mb-2">
+                                <a class="trending-tag badge badge-primary text-uppercase font-weight-semi-bold p-1 mr-2" 
+                                    href=""><?= $trending->tag ?></a>
+                                <a class="trending-tanggal text-body" href="">
+                                    <small><?= date('d M Y', strtotime($trending->tanggal)) ?></small>
+                                </a>
+                            </div>
+                            <a class="trending-judul h6 m-0 text-secondary text-uppercase font-weight-bold" 
+                                href="<?= base_url('web/single/'.$trending->id) ?>">
+                                <?= $trending->judul ?>
+                            </a>
+                        </div>
+
                             </div>
                             <?php endif; ?>
                             <?php $count++; ?>
