@@ -27,7 +27,7 @@ class Auth extends CI_Controller {
 		else
 		{
 			$this->session->set_flashdata('error','Username & Password salah');
-			redirect('auth');
+			redirect('Auth');
 		}
 	}
 
@@ -36,7 +36,8 @@ class Auth extends CI_Controller {
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('nama');
 		$this->session->unset_userdata('is_login');
-		redirect('login');
+		$this->session->unset_userdata('user_id');
+		redirect('Auth');S
 	}
 
 	
